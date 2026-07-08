@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:description" content="ゴルフ場料金照会">
+<title>ゴルフ場料金案内</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topbar">
+<button class="logo" id="logoBtn" title="初期化してホームに戻る">
+<span class="word">⛳ ゴルフ場料金案内</span>
+</button>
+</div>
+<div class="stage">
+<div class="intro">
+<h1>ゴルフ場料金照会</h1>
+<p>ゴルフ場・キャディー有無・プレー日を選ぶと、4B／3B／2Bの最終料金をまとめて表示します。</p>
+</div>
+<div class="grid">
+<div class="panel">
+<div class="field">
+<label for="courseSel">ゴルフ場</label>
+<select id="courseSel"><option value="">-- ゴルフ場を選択 --</option></select>
+</div>
+<div class="field">
+<label for="caddySel">キャディー有無</label>
+<select id="caddySel">
+<option value="">-- 選択してください --</option>
+<option value="キャディー">キャディー付き</option>
+<option value="セルフ">セルフ</option>
+</select>
+</div>
+<div class="field">
+<label>プレー日</label>
+<div class="calendar" id="calendar">
+<div class="cal-head">
+<button type="button" class="cal-nav" id="prevMonth">&#8249;</button>
+<span class="cal-title" id="calTitle"></span>
+<button type="button" class="cal-nav" id="nextMonth">&#8250;</button>
+</div>
+<div class="cal-weekdays">
+<span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span>
+</div>
+<div class="cal-grid" id="calGrid"></div>
+</div>
+</div>
+<button class="go" id="goBtn">料金を調べる</button>
+</div>
+<div class="resultPanel" id="resultPanel">
+<div class="placeholder" id="placeholder">
+<p><span class="ph-text-pc">左の項目を選択すると</span><span class="ph-text-mobile">上の項目を選択すると</span><br>ここに最終料金が表示されます</p>
+</div>
+</div>
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
