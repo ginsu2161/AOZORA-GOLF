@@ -230,7 +230,7 @@ function renderResults(course, dateStr, type, data){
   const notIncludedSizes = GROUP_SIZES.filter(size => data.results[size].cartNote && !data.results[size].cartNote.included);
   if(notIncludedSizes.length > 0){
     const prefix = notIncludedSizes.length < GROUP_SIZES.length ? `${notIncludedSizes.join('・')}の` : '';
-    topNotes.push(`${prefix}最終料金にはカート代が含まれておりませんのでご注意ください。`);
+    topNotes.push(`${prefix}最終料金にはカート代が含まれておりません。`);
   }
   if(data.shuttle) topNotes.push('送迎可能です。ご希望の場合は別途お問い合わせください。');
 
