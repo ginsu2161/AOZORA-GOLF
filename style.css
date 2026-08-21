@@ -220,8 +220,10 @@ background:var(--surface);
 border-radius:20px;
 padding:22px;
 display:flex;
+flex-direction:column;
 align-items:center;
 justify-content:center;
+gap:16px;
 }
 
 .placeholder{
@@ -237,7 +239,7 @@ line-height:1.7;
 }
 .placeholder .ph-text-mobile{ display:none; }
 
-.result-card{
+.result-card, .void-card{
 width:100%;
 text-align:center;
 animation:rise .38s cubic-bezier(.22,.8,.32,1);
@@ -331,6 +333,14 @@ font-weight:500;
 color:var(--ink-soft);
 line-height:1.6;
 }
+.room-card.room-card--empty{
+opacity:0.6;
+}
+.room-card.room-card--empty .room-empty-msg{
+font-size:15px;
+font-weight:700;
+color:var(--void);
+}
 
 @media (max-width: 760px){
 .room-card{ padding:16px 16px; }
@@ -347,9 +357,7 @@ line-height:1.7;
 }
 
 .void-card{
-text-align:center;
 padding:20px;
-animation:rise .38s cubic-bezier(.22,.8,.32,1);
 }
 .void-card .ic{
 width:52px; height:52px;
@@ -374,4 +382,36 @@ line-height:1.8;
 @media (max-width: 760px){
 .placeholder .ph-text-pc{ display:none; }
 .placeholder .ph-text-mobile{ display:inline; }
+}
+
+/* ---- policy card: cancellation charge / other notices, kept as a separate box ---- */
+.policy-card{
+width:100%;
+background:var(--white);
+border-radius:16px;
+padding:18px 20px;
+text-align:left;
+animation:rise .38s cubic-bezier(.22,.8,.32,1);
+}
+.policy-row{
+display:flex;
+flex-direction:column;
+gap:4px;
+}
+.policy-row + .policy-row{
+margin-top:14px;
+padding-top:14px;
+border-top:1px dashed var(--line);
+}
+.policy-label{
+font-size:11.5px;
+font-weight:700;
+color:var(--accent-deep);
+letter-spacing:0.02em;
+}
+.policy-text{
+font-size:12.5px;
+font-weight:500;
+color:var(--ink-soft);
+line-height:1.75;
 }
